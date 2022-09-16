@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+
+body{
+    background-color: black;
+    margin: 2em auto;
+    width: 75%;
+
+}
+
+p{
+    font-size: 1em;
+    color: white;
+
+}
+
+h3 {
+    font-size: smaller;
+    color: violet;
+    text-align: center;
+}
+
+.coeficientes {
+    font-size: 2em;
+    color: yellowgreen;
+}
+
+form {
+    border: 1px double orange;
+    margin: 2em auto;
+    padding: 0.5em;
+}
+
+
+/* ancho fijo para los label asi se centran los cuadros*/
+label {
+    width: 350px;
+    display: inline-block;
+}
+

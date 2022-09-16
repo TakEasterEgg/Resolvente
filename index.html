@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de la resolvente</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <h1 class="Titulo"> Calculo de resolvente </h1>
+    <p class="orden"> Ingrese los coeficientes de su ecuacion cuadratica </p>
+    
+    <!-- bloque de coeficientes-->
+    <form action="#" method="POST">
+    <div class ="coeficientes">
+        <div class="ingreso">
+            <label for="coeficiente cuadratico"> Coeficiente cuadratico:</label>
+            <input type="number" class="cuadro" id="cuadratico" required/>
+        </div>
+
+        <div class = "ingreso">
+            <label for="coeficiente lineal"> Coeficiente lineal:</label>
+            <input type="number" class="cuadro" id="lineal" required/>
+        </div>
+
+        <div class="ingreso">
+            <label for="termino independiente"> Termino independiente:</label>
+            <input type="number" class="cuadro" id="independiente" required/>
+        </div>
+
+    </div>
+    </form>
+    <div class="botones">
+        <!-- <input type="submit" id="boton-calcular" value="Calcular!"/> -->
+        <input type="button" value ="Resolver!" id="boton" class="boton">
+
+    </div>
+    <div>
+        <p class="mensaje" id="resultado"></p>
+    </div>
+
+    <script>
+
+        // resolvente
+        var resolvente = function(){
+            var a = document.getElementById("cuadratico").value;
+            var b = document.getElementById("lineal").value;
+            var c = document.getElementById("independiente").value;
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+           
+            if (a == "0") {
+                return "Usted no ha ingresado una cuadratica"
+            }
+                 
+            if ((b**2) < (4*a*c) ){
+                return "La solucion es imaginaria, en algun service pack lo soluciono..."
+            }
+
+            else {
+                console.log(a,b,c); // DEBUG
+
+            var x1 = Math.round((-b-Math.sqrt(b**2 -4*a*c))/(2*a)*1000)/1000;
+            var x2 = Math.round((-b + Math.sqrt(b**2 -4*a*c))/(2*a)*1000)/1000;
+
+            if (x1==x2){
+                return "ambas raices son: "+x1
+            }
+            
+            return "Una raiz es: "+ x1 + " y la otra raiz es: "+ x2           
+            }
+        }
+
+        // calculo de resolvente con los coeficientes ingresados (accion boton)
+
+        document.getElementById("boton").onclick = function(){
+            document.getElementById("resultado").innerHTML = resolvente()
+        }
+        
+        
+    </script>
+    
+    <footer>
+        <h3> Resolvente agosto 2020 </h3>
+    </footer>
+</body>
+</html>
